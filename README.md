@@ -1,140 +1,111 @@
-# Personalized Investment Recommendation App
+# PERSONALIZED-INVESTMENT-RECOMMENDATION-APP
 
-## 1. Project Overview
+_Empowering Smarter Investments, Personalized for You_
 
-**Title:** Personalized Investment Recommendation App for Bank Customers
+![last commit](https://img.shields.io/github/last-commit/coastalseven-team-b/Personalized-Investment-Recommendation-App?style=for-the-badge)
+![status](https://img.shields.io/badge/status-today-brightgreen?style=for-the-badge)
+![coverage](https://img.shields.io/badge/coverage-67.7%25-blue?style=for-the-badge)
+![languages](https://img.shields.io/badge/languages-3-informational?style=for-the-badge)
 
-**Objective:**
-Develop a smart, user-friendly application that analyzes customer financial behavior, assesses risk profiles, and recommends suitable mutual funds and stocks. The app allows users to simulate portfolios, track performance, and improve financial literacy through tips and suggestions.
+**Built with the tools and technologies:**
 
----
-
-## 2. Architecture Overview
-
-- **Frontend:** React (styled-components, React Router)
-- **Backend:** Flask (Python), modular blueprints
-- **Database:** MongoDB (users, transactions, investments, options, recommendations)
-- **ML Models:** Scikit-learn (Random Forest, multi-label)
-
----
-
-## 3. Frontend Pages & Functionality
-
-### 3.1 Login Page (`/login`)
-- User authentication (email, password)
-- Redirects to dashboard or risk profile based on completion
-
-### 3.2 Register Page (`/register`)
-- User registration (name, email, password)
-- Redirects to risk profiling questionnaire
-
-### 3.3 Risk Profiling Questionnaire (`/risk-profile`)
-- 7-question form to assess risk level
-- Dropdown for investment goal
-- Calculates risk score and level (Low/Medium/High)
-- Submits profile to backend
-
-### 3.4 Dashboard (`/dashboard`)
-- Shows user overview: name, virtual balance, invested amount, returns
-- Displays portfolio table (type, amount, expected return, date)
-
-### 3.5 Bank Data Upload (`/bank-upload`)
-- Upload CSV of bank transactions
-- Classifies user as Saver/Spender/Investor
-- Displays all transactions in a table
-
-### 3.6 Investment Page (`/investment`)
-- Add new virtual investments (type, company, amount, expected return)
-- Company dropdown auto-fills expected return
-- List and sell current investments
-
-### 3.7 Recommendation Page (`/recommendation`)
-- **Section 1:** Get recommendations based on financial behavior, risk profile, and goal
-- **Section 2:** Get recommendations based on risk, tenure, and capital (with input validation)
-- Both sections display results in a unified table
-
-### 3.8 NotFound Page
-- 404 fallback for undefined routes
+![Flask](https://img.shields.io/badge/-Flask-black?style=flat-square)
+![JSON](https://img.shields.io/badge/-JSON-777?style=flat-square)
+![NPM](https://img.shields.io/badge/-Npm-CB3837?style=flat-square)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square)
+![MongoDB](https://img.shields.io/badge/-MongoDB-4DB33D?style=flat-square)
+![StyledComponents](https://img.shields.io/badge/-styledcomponents-DB7093?style=flat-square)
 
 ---
 
-## 4. Backend Structure
+## Table of Contents
 
-- **app.py:** Flask app initialization, JWT setup, MongoDB connection
-- **auth.py:** User login and registration endpoints
-- **user.py:** User profile and risk profile endpoints
-- **investment.py:** Add, list, and sell investments
-- **transaction.py:** Upload and fetch bank transactions, classify financial behavior
-- **recommendation.py:**
-  - `/api/recommend`: ML-based recommendations (profile/behavior/goal)
-  - `/api/recommend-rtc`: ML-based recommendations (risk, tenure, capital)
-- **insert_investment_options.py:** Inserts investment options into DB
-- **ML Training Scripts:**
-  - `train_recommendation_model.py`
-  - `train_risk_tenure_capital_model.py`
+- Overview
+- Getting Started
+  - Prerequisites
+  - Installation
+  - How to Run
+  - Usage
 
 ---
 
-## 5. Database (MongoDB) Schema
+## Overview
 
-- **users:** User info, risk profile, investment goal
-- **bank_transactions:** Credit/debit/investment transactions
-- **investment_options:** Stocks and mutual funds metadata
-- **investments:** User's virtual investments
-- **recommendations:** Saved recommendations
-- **financial_tips:** Tips by risk level (optional)
+Personalized-Investment-Recommendation-App is a full-stack developer tool designed to deliver tailored investment insights through a sleek, React-based frontend and a robust backend powered by Flask and MongoDB. It streamlines the creation of personalized financial advice, risk assessment, and investment management workflows.
 
----
+### Why Personalized-Investment-Recommendation-App?
 
-## 6. Machine Learning Model Integration
+This project empowers developers to build scalable, user-centric investment platforms. The core features include:
 
-### 6.1 Main Recommendation Model
-- **Algorithm:** Random Forest (OneVsRestClassifier)
-- **Features:** Risk profile, financial behavior, investment goal
-- **Endpoint:** `/api/recommend`
-- **Training Script:** `train_recommendation_model.py`
-
-### 6.2 Risk-Tenure-Capital (RTC) Model
-- **Algorithm:** Random Forest (OneVsRestClassifier)
-- **Features:** Risk level, tenure, capital, capital bin
-- **Endpoint:** `/api/recommend-rtc`
-- **Training Script:** `train_risk_tenure_capital_model.py`
-- **Threshold optimization** for each label
-
+- 🎨 **Rich UI & Animations**: Utilizes Material UI, React Router, and Framer Motion for a dynamic, responsive user experience.
+- 🔐 **Secure User Management**: Implements authentication, profile editing, and risk profiling with JWT and MongoDB.
+- 📊 **Data-Driven Insights**: Integrates real-time stock data and personalized recommendations powered by machine learning models.
+- 🧱 **Modular Architecture**: Combines React frontend with Flask backend, supporting easy customization and extension.
+- 💼 **Investment & Portfolio Management**: Enables adding, viewing, and selling investments with detailed analytics.
 
 ---
 
-## 7. Features & Logic
+## Getting Started
 
-- **Risk Profiling:** 7-question form, score-based risk level
-- **Financial Behavior Classification:** Rule-based on bank data (Saver/Spender/Investor)
-- **Investment Recommendations:** ML-driven, two models (profile/goal and risk/tenure/capital)
-- **Simulated Portfolio:** Add/sell investments, track returns
-- **Financial Tips:** Personalized tips by risk level (optional)
+### Prerequisites
 
----
+This project requires the following dependencies:
 
-## 8. How to Run
-
-1. **Backend:**
-   - Change directory to backend: `cd backend`
-   - Install requirements: `pip install -r requirements.txt`
-   - Start Flask app: `python app.py`
-2. **Frontend:**
-   - Change directory to frontend: `cd frontend`
-   - Install dependencies: `npm install`
-   - Start React app: `npm start`
-3. **MongoDB:**
-   - Ensure MongoDB is running and accessible
+- **Programming Language**: JavaScript
+- **Backend Language**: Python
+- **Package Manager**: Npm, Pip
 
 ---
 
-## 9. Credits
+### Installation
 
-- Frontend: Omkar & Akshay
-- Backend: Jayanth & Veena
-- Database: Jayanth
-- AI/ML: Jayanth & Lakshmi Manasa
+Build Personalized-Investment-Recommendation-App from the source and install dependencies:
 
----
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/jayeshbhoir/Personalized-Investment-Recommendation-App
+
+2. **Navigate to the project directory:**
+   ```bash
+   cd Personalized-Investment-Recommendation-App
+3. **Install the dependencies:**
+
+Using npm:
+   ```bash
+   npm install
+   npm install react-scripts
+```
+Using pip:
+   ```bash
+   pip install -r backend/requirements.txt
+```
+
+### How To Run
+**Run Backend:**
+   ```bash
+   cd backend
+   python app.py
+```
+**Run Frontend:**
+   ```bash
+   cd frontend
+   npm start
+```
+
+### Usage
+
+**Login using**
+- Email: user1@gmail.com
+- Password: password
+- or register a new user.
+
+
+
+
+
+
+
 
